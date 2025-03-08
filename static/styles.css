@@ -1,0 +1,127 @@
+nav .navbar-brand {
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #2e944b;
+}
+
+main .form-control {
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main {
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img {
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+main table {
+    /* left-align contents */
+    text-align: left;
+}
+
+main tfoot {
+    /* boldface tables' footers */
+    font-weight: bold;
+}
+
+/* Below portion added */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.navbar {
+    background-color: #007bff !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* Enhance Buttons */
+.btn-primary {
+    background-color: #28a745 !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #218838 !important;
+}
+
+/* Improve Table Design */
+.table {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+    background: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+/* Form Styling */
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+/* added portion till here */

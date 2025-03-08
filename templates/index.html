@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="text-center mb-4">📊 Your Stock Portfolio</h2>
+
+        <div class="row">
+            {% for stock in stocksListWithPrice %}
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ stock["name"] }}</h5>
+                        <h6 class="text-muted">{{ stock["symbol"] }}</h6>
+                        <p class="card-text">Shares: <strong>{{ stock["shares"] }}</strong></p>
+                        <p class="card-text">Price: <strong>{{ stock["price"] }}</strong></p>
+                        <p class="card-text">Buy Price: <strong>{{ stock["buyPrice"] }}</strong></p>
+                        <p class="card-text">Total: <strong>{{ stock["total"] }}</strong></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-4">
+            <h4>Total Portfolio Value: <span class="badge badge-success">{{ total }}</span></h4>
+            <h4>Available Cash: <span class="badge badge-warning">{{ cash }}</span></h4>
+        </div>
+    </div>
+{% endblock %}
+
