@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<!-- Use a full-width container-fluid for maximum horizontal space -->
-<div class="container-fluid my-4">
-    <!-- Keep your original heading -->
-    <h2>Your Portfolio</h2>
+<!-- Full-width container-fluid with zero padding to fill the page width -->
+<div class="container-fluid p-0">
+    <h2 class="text-center my-4">Your Portfolio</h2>
 
-    <!-- Wrap table in a scrollable container -->
+    <!-- Scrollable container -->
     <div class="table-responsive" style="max-height: 600px; overflow-y: auto;">
-        <table id="symboltable" class="table table-striped">
+        <!-- Force table to 100% width with w-100 or inline style -->
+        <table id="symboltable" class="table table-striped w-100" style="min-width: 100%;">
             <thead>
                 <tr>
                     <th>Symbol</th>
@@ -48,6 +48,12 @@
                 </tr>
             </tfoot>
         </table>
+    <script src="../static/tableUpdate.js"></script>
+    <script>
+        window.onload = function() {
+        startUpdate();
+      };
+    </script>
     </div>
 </div>
 {% endblock %}
