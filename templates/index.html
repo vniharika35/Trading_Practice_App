@@ -1,46 +1,54 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<h2>Your Portfolio</h2>
-<table id="symboltable" class="table table-striped">
-    <thead>
-        <tr>
-            <th>Symbol</th>
-            <th>Name</th>
-            <th>Shares</th>
-            <th>Buy Price</th>
-            <th>Current Price</th>
-            <th>P/L</th>
-            <th>Value</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for stock in stocksListWithPrice %}
-        <tr>
-            <td>{{ stock["symbol"] }}</td>
-            <td>{{ stock["name"] }}</td>
-            <td>{{ stock["shares"] }}</td>
-            <td>{{ stock["buyPrice"] }}</td>
-            <td>{{ stock["price"] }}</td>
-            <td>$0.00</td> <!-- P/L gets updated by tableUpdate.js -->
-            <td>{{ stock["total"] }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="5" class="text-right"><strong>Cash:</strong></td>
-            <td colspan="2" id="cash">{{ cash }}</td>
-        </tr>
-        <tr>
-            <td colspan="5" class="text-right"><strong>Total:</strong></td>
-            <td colspan="2" id="total">{{ total }}</td>
-        </tr>
-        <tr>
-            <td colspan="5" class="text-right"><strong>P/L:</strong></td>
-            <td colspan="2" id="PL">$0.00</td>
-        </tr>
-    </tfoot>
-</table>
+<!-- Use a full-width container-fluid for maximum horizontal space -->
+<div class="container-fluid my-4">
+    <!-- Keep your original heading -->
+    <h2>Your Portfolio</h2>
+
+    <!-- Wrap table in a scrollable container -->
+    <div class="table-responsive" style="max-height: 600px; overflow-y: auto;">
+        <table id="symboltable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Buy Price</th>
+                    <th>Current Price</th>
+                    <th>P/L</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocksListWithPrice %}
+                <tr>
+                    <td>{{ stock["symbol"] }}</td>
+                    <td>{{ stock["name"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td>{{ stock["buyPrice"] }}</td>
+                    <td>{{ stock["price"] }}</td>
+                    <td>$0.00</td> <!-- P/L gets updated by tableUpdate.js -->
+                    <td>{{ stock["total"] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="text-right"><strong>Cash:</strong></td>
+                    <td colspan="2" id="cash">{{ cash }}</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="text-right"><strong>Total:</strong></td>
+                    <td colspan="2" id="total">{{ total }}</td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="text-right"><strong>P/L:</strong></td>
+                    <td colspan="2" id="PL">$0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 {% endblock %}
 
