@@ -1,5 +1,5 @@
 function startUpdate() {
-  myVar = setInterval(tableUpdate, 20000);
+  myVar = setInterval(tableUpdate, 5000);
   tableUpdate();
 }
 
