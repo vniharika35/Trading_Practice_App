@@ -5,30 +5,26 @@ Quote
 {% endblock %}
 
 {% block main %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
-    </script>  
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
-    </script>  
-    
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
-        rel="stylesheet" type="text/css" />  
-<form action="/quote" method="post">
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet" type="text/css" />  
+<form action="/quote" method="post" class="p-4 shadow-sm border rounded bg-white">
     <div class="form-group">
         <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text" id="quotes">
     </div>
     <button class="btn btn-primary" type="submit">Quote</button>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
 <script>
     $( function() {
-            var availableQuotes = [
-                    {% for quote in quotes %}
-                    "{{quote}}",
-                    {% endfor %}
-                ];
-            $( "#quotes" ).autocomplete({
-                    source: availableQuotes
-                });
-        } );
+        var availableQuotes = [
+            {% for quote in quotes %}
+            "{{quote}}",
+            {% endfor %}
+        ];
+        $( "#quotes" ).autocomplete({
+            source: availableQuotes
+        });
+    });
 </script>
 {% endblock %}

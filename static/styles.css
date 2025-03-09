@@ -1,146 +1,172 @@
-nav .navbar-brand {
-    /* size for brand */
-    font-size: xx-large;
-}
-
-/* colors for brand */
-nav .navbar-brand .blue {
-    color: #537fbe;
-}
-
-nav .navbar-brand .red {
-    color: #ea433b;
-}
-
-nav .navbar-brand .yellow {
-    color: #f5b82e;
-}
-
-nav .navbar-brand .green {
-    color: #2e944b;
-}
-
-main .form-control {
-    /* center form controls */
-    display: inline-block;
-
-    /* override Bootstrap's 100% width for form controls */
-    width: auto;
-}
-
-main {
-    /* scroll horizontally as needed */
-    overflow-x: auto;
-
-    /* center contents */
-    text-align: center;
-}
-
-main img {
-    /* constrain images on small screens */
-    max-width: 100%;
-}
-
-main table {
-    /* left-align contents */
-    text-align: left;
-}
-
-main tfoot {
-    /* boldface tables' footers */
-    font-weight: bold;
-}
-
-/* Below portion added */
+/* Updated styles.css – Modern theme with #0d1e5a and gradients */
 
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    background: linear-gradient(135deg, #0d1e5a, #2a3f80);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
+/* Navigation Bar */
 .navbar {
-    background-color: #007bff !important;
+    background: linear-gradient(90deg, #0d1e5a, #1f3a93);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
-
 .navbar-brand {
-    font-weight: bold;
-    color: white !important;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #ffffff !important;
 }
-
-.navbar-nav .nav-item .nav-link {
-    color: white !important;
+.navbar-nav .nav-link {
+    color: #ffffff !important;
     font-weight: 500;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
-
-.navbar-nav .nav-item .nav-link:hover {
+.navbar-nav .nav-link:hover {
     color: #ffcc00 !important;
 }
 
+/* Containers and Main Content (for normal pages) */
 .container {
     max-width: 900px;
     margin: auto;
-    padding-top: 20px;
+    padding: 20px;
+}
+main {
+    background: #ffffff;
+    color: #333333;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-/* Enhance Buttons */
+/* Form Controls */
+.form-control {
+    display: inline-block;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
 .btn-primary {
-    background-color: #28a745 !important;
+    background: linear-gradient(90deg, #0d1e5a, #1f3a93);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
-    transition: 0.3s;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: #ffffff;
 }
-
 .btn-primary:hover {
-    background-color: #218838 !important;
+    background: linear-gradient(90deg, #1f3a93, #0d1e5a);
+}
+.btn-success {
+    background: linear-gradient(90deg, #0d1e5a, #1f3a93);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: #ffffff;
+}
+.btn-success:hover {
+    background: linear-gradient(90deg, #1f3a93, #0d1e5a);
+    transform: translateY(-2px);
+}
+.btn-warning {
+    background: #ffc107 !important;
+    color: #333333 !important;
+    border: none;
+}
+.btn-warning:hover {
+    background: #e0a800 !important;
 }
 
-/* Improve Table Design */
+/* Tables */
 .table {
-    background: white;
-    border-radius: 10px;
+    background: #ffffff;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: #333333;
 }
-
-/*.table thead {
-    background: #007bff;
-    color: white;
-    text-transform: uppercase;
-}*/
-
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
 table thead {
     position: sticky;
-    top: 0;  /* Stick at the top of the container */
+    top: 0;
     z-index: 2;
-    background-color: #007bff !important; /* Solid blue background */
-    display: table-header-group; /* Ensure correct table header behavior */
+    background-color: #0d1e5a;
 }
-
 table thead th {
-    background-color: inherit;
-    color: #fff !important;
+    color: #ffffff !important;
     font-weight: 600;
 }
 
-.table tbody tr:hover {
-    background: #f1f1f1;
-}
-
-/* Form Styling */
-.form-control {
+/* Alerts */
+.alert {
     border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    font-size: 0.9rem;
     padding: 10px;
+    background: #0d1e5a;
+    color: #ffffff;
+    text-align: center;
 }
 
-.navbar.sticky-top {
-    z-index: 2000 !important;
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+}
 
+/* ===================== Glassmorphic styles for login/register ===================== */
 
-/* added portion till here */
+/* Fullscreen translucent overlay covering entire viewport */
+.fullscreen-translucent {
+    width: 100%;
+    height: 100vh; /* full viewport height */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass-card for the form - larger & more spacious */
+.glass-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 3rem;
+    width: 90%;
+    max-width: 600px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form group alignment in the glass card */
+.glass-card .form-group {
+    margin-bottom: 1.5rem;
+}
+.glass-card .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
