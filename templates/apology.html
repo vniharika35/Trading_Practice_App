@@ -1,9 +1,59 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %}  <!-- Extends layout.html to keep the navbar -->
 
 {% block title %}
-    Apology
+    Error
 {% endblock %}
 
 {% block main %}
-    <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://www.mtwmag.com/wp-content/uploads/2018/06/manufacturing-Error.jpg" title="{{ top }}">
+<style>
+    /* Ensure the main container fills the full width */
+    main.container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Meme container adjustments */
+    .meme-container {
+        position: relative;
+        width: 100vw; /* Full width */
+        height: 90vh; /* Adjust height based on navbar */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Prevents extra spacing */
+    }
+
+    .meme-container img {
+        width: 80%; /* Ensure image scales well */
+        max-width: 1000px; /* Prevent excessive stretching */
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Text styling */
+    .meme-text {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: #1A1A40; /* Dark navy blue (matches theme) */
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Softer white shadow for better readability */
+    }
+
+    .top-text {
+        top: 0%; /* Move it fully up into the white space */
+    }
+
+    .bottom-text {
+        bottom: 5%; /* Move it further down into white space */
+    }
+</style>
+
+<div class="meme-container">
+    <img src="{{ url_for('static', filename='images/error_page.jpg') }}" alt="Apology Image">
+    <div class="meme-text top-text">{{ top }}</div>
+    <div class="meme-text bottom-text">{{ bottom }}</div>
+</div>
 {% endblock %}

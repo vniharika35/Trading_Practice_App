@@ -89,6 +89,9 @@ def getQuote(ticker):
     except Exception as e:
         print(f"Error fetching data for {ticker}: {e}")
         return None
+    
+    if ( live_price == None ):
+        return None
 
     # Check the Flask configuration for simulation mode
     if current_app.config.get("SIMULATION_MODE", False):

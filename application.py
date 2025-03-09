@@ -304,6 +304,9 @@ def quote():
 
         if not quote:
             return apology("INVALID SYMBOL")
+        
+        price = quote["price"]
+        quote["price"] = round(price,2)
 
         return render_template("quoted.html", quote=quote)
 
