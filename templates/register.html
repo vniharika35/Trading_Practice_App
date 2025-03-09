@@ -1,20 +1,56 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Register
+Register
 {% endblock %}
 
 {% block main %}
+<style>
+  main.container {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+</style>
+
+<div class="fullscreen-translucent">
+  <div class="glass-card">
+    <h2 class="text-center mb-4">Create Your Account</h2>
     <form action="/register" method="post">
-        <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
-        </div>
-        <div class="form-group">
-            <input class="form-control" name="password" placeholder="Password" type="password">
-        </div>
-        <div class="form-group">
-            <input class="form-control" name="passwordAgain" placeholder="Password (again)" type="password">
-        </div>
-        <button class="btn btn-primary" type="submit">Register</button>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          id="username"
+          autocomplete="off" 
+          autofocus 
+          class="form-control" 
+          name="username" 
+          placeholder="Username" 
+          type="text"
+        >
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          id="password"
+          class="form-control" 
+          name="password" 
+          placeholder="Password" 
+          type="password"
+        >
+      </div>
+      <div class="form-group">
+        <label for="passwordAgain">Re-enter Password</label>
+        <input 
+          id="passwordAgain"
+          class="form-control" 
+          name="passwordAgain" 
+          placeholder="Re-enter Password" 
+          type="password"
+        >
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Register</button>
     </form>
+  </div>
+</div>
 {% endblock %}

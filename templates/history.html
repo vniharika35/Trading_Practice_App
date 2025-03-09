@@ -5,24 +5,24 @@
 {% endblock %}
 
 {% block main %}
-      <table class="table table-striped">
-        <thead>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Transacted</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for history in historyList %}
             <tr>
-                <th>Symbol</th>
-                <th>Shares</th>
-                <th>Price</th>
-                <th>Transacted</th>
+                <td>{{ history["symbol"] }}</td>
+                <td>{{ history["shares"] }}</td>
+                <td>{{ history["price"] }}</td>
+                <td>{{ history["transacted"] }}</td>
             </tr>
-        </thead>
-        <tbody>
-            {% for history in historyList %}
-                <tr>
-                    <td>{{history["symbol"]}}</td>
-                    <td>{{history["shares"]}}</td>
-                    <td>{{history["price"]}}</td>
-                    <td>{{history["transacted"]}}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

@@ -5,34 +5,29 @@ Buy
 {% endblock %}
 
 {% block main %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
-</script>  
-
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
-</script>  
-
-<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
       rel="stylesheet" type="text/css" />  
-<form action="/buy" method="post">
+<form action="/buy" method="post" class="p-4 shadow-sm border rounded bg-white">
     <div class="form-group">
         <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text" id="quotes">
     </div>
     <div class="form-group">
-        <input autocomplete="off" autofocus input type="number" class="form-control"
-                                                                min="1" max="10000000000" step="1" name="shares" placeholder="Shares" type="text">
+        <input autocomplete="off" class="form-control" type="number" min="1" max="10000000000" step="1" name="shares" placeholder="Shares">
     </div>
     <button class="btn btn-primary" type="submit">Buy</button>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
 <script>
     $( function() {
-            var availableQuotes = [
-                    {% for quote in quotes %}
-                    "{{quote}}",
-                    {% endfor %}
-                ];
-            $( "#quotes" ).autocomplete({
-                    source: availableQuotes
-                });
-        } );
+        var availableQuotes = [
+            {% for quote in quotes %}
+            "{{quote}}",
+            {% endfor %}
+        ];
+        $( "#quotes" ).autocomplete({
+            source: availableQuotes
+        });
+    });
 </script>
 {% endblock %}

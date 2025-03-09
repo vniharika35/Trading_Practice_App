@@ -1,22 +1,48 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+Log In
 {% endblock %}
 
 {% block main %}
-    <div class="container">
-        <h2 class="text-center">🔐 Login to Your Account</h2>
-        <form action="/login" method="post" class="mt-4 p-4 shadow-sm border rounded bg-white">
-            <div class="form-group">
-                <label>Username</label>
-                <input autocomplete="off" class="form-control" name="username" placeholder="Enter your username" type="text">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input class="form-control" name="password" placeholder="Enter your password" type="password">
-            </div>
-            <button class="btn btn-success btn-block">Login</button>
-        </form>
-    </div>
+<!-- Override the default main.container styling for this page -->
+<style>
+  main.container {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+</style>
+
+<!-- Fullscreen translucent overlay -->
+<div class="fullscreen-translucent">
+  <!-- Glass-card that holds the login form -->
+  <div class="glass-card">
+    <h2 class="text-center mb-4">🔐 Login to Your Account</h2>
+    <form action="/login" method="post">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          id="username"
+          autocomplete="off"
+          class="form-control"
+          name="username"
+          placeholder="Enter your username"
+          type="text"
+        >
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          class="form-control"
+          name="password"
+          placeholder="Enter your password"
+          type="password"
+        >
+      </div>
+      <button class="btn btn-success btn-block" type="submit">Login</button>
+    </form>
+  </div>
+</div>
 {% endblock %}

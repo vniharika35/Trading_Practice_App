@@ -1,13 +1,10 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<!-- Full-width container-fluid with zero padding to fill the page width -->
 <div class="container-fluid p-0">
   <h2 class="text-center my-4">Your Portfolio</h2>
-
-  <!-- Scrollable container -->
-  <div style="max-height: 600px; overflow-y: auto; overflow-x: auto; position: relative;">
-    <table id="symboltable" class="table table-striped w-100" style="min-width: 100%;">
+  <div style="max-height: 600px; overflow-y: auto; overflow-x: auto;">
+    <table id="symboltable" class="table table-striped w-100">
       <thead>
         <tr>
           <th>Symbol</th>
@@ -27,7 +24,7 @@
           <td>{{ stock["shares"] }}</td>
           <td>{{ stock["buyPrice"] }}</td>
           <td>{{ stock["price"] }}</td>
-          <td>$0.00</td> <!-- P/L gets updated by tableUpdate.js -->
+          <td>$0.00</td>
           <td>{{ stock["total"] }}</td>
         </tr>
         {% endfor %}
@@ -54,7 +51,5 @@
       };
     </script>
   </div>
-
 </div>
 {% endblock %}
-
