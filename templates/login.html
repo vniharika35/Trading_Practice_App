@@ -5,44 +5,71 @@ Log In
 {% endblock %}
 
 {% block main %}
-<!-- Override the default main.container styling for this page -->
 <style>
-  main.container {
-    background: transparent !important;
-    padding: 0 !important;
-    box-shadow: none !important;
+  /* Use full viewport height and disable scrolling */
+  html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+  }
+  
+  /* Fix navbar and footer positions */
+  .navbar {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+  }
+  footer {
+      position: fixed !important;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      margin: 0;
+  }
+  /* Create a container for the login area between navbar and footer */
+  .login-split {
+      position: absolute;
+      top: 56px;      /* Adjust this value to your navbar height */
+      bottom: 40px;   /* Adjust this value to your footer height */
+      left: 0;
+      right: 0;
+      height: calc(100vh - 96px); /* 56px + 40px = 96px */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  /* Fullscreen translucent overlay inside the login-split */
+  .fullscreen-translucent {
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
 </style>
 
-<!-- Fullscreen translucent overlay -->
-<div class="fullscreen-translucent">
-  <!-- Glass-card that holds the login form -->
-  <div class="glass-card">
-    <h2 class="text-center mb-4">🔐 Login to Your Account</h2>
-    <form action="/login" method="post">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          id="username"
-          autocomplete="off"
-          class="form-control"
-          name="username"
-          placeholder="Enter your username"
-          type="text"
-        >
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          id="password"
-          class="form-control"
-          name="password"
-          placeholder="Enter your password"
-          type="password"
-        >
-      </div>
-      <button class="btn btn-success btn-block" type="submit">Login</button>
-    </form>
+<div class="login-split">
+  <div class="fullscreen-translucent">
+    <div class="glass-card">
+      <h2 class="text-center mb-4">🔐 Login to Your Account</h2>
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" autocomplete="off" class="form-control" name="username" placeholder="Enter your username" type="text">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" class="form-control" name="password" placeholder="Enter your password" type="password">
+        </div>
+        <button class="btn btn-success btn-block" type="submit">Login</button>
+      </form>
+    </div>
   </div>
 </div>
 {% endblock %}

@@ -6,51 +6,70 @@ Register
 
 {% block main %}
 <style>
-  main.container {
-    background: transparent !important;
-    padding: 0 !important;
-    box-shadow: none !important;
+  html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+  }
+  
+  .navbar {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+  }
+  footer {
+      position: fixed !important;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      margin: 0;
+  }
+  .login-split {
+      position: absolute;
+      top: 56px;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      height: calc(100vh - 96px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .fullscreen-translucent {
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
 </style>
 
-<div class="fullscreen-translucent">
-  <div class="glass-card">
-    <h2 class="text-center mb-4">Create Your Account</h2>
-    <form action="/register" method="post">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input 
-          id="username"
-          autocomplete="off" 
-          autofocus 
-          class="form-control" 
-          name="username" 
-          placeholder="Username" 
-          type="text"
-        >
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input 
-          id="password"
-          class="form-control" 
-          name="password" 
-          placeholder="Password" 
-          type="password"
-        >
-      </div>
-      <div class="form-group">
-        <label for="passwordAgain">Re-enter Password</label>
-        <input 
-          id="passwordAgain"
-          class="form-control" 
-          name="passwordAgain" 
-          placeholder="Re-enter Password" 
-          type="password"
-        >
-      </div>
-      <button class="btn btn-primary btn-block" type="submit">Register</button>
-    </form>
+<div class="login-split">
+  <div class="fullscreen-translucent">
+    <div class="glass-card">
+      <h2 class="text-center mb-4">Create Your Account</h2>
+      <form action="/register" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+          <label for="passwordAgain">Re-enter Password</label>
+          <input id="passwordAgain" class="form-control" name="passwordAgain" placeholder="Re-enter Password" type="password">
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Register</button>
+      </form>
+    </div>
   </div>
 </div>
 {% endblock %}

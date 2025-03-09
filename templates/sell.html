@@ -7,8 +7,11 @@ Sell
 {% block main %}
 <form action="/sell" method="post" class="p-4 shadow-sm border rounded bg-white">
     <div class="form-group">
-        <select class="form-control" name="symbol">
-            <option disabled selected value="">Symbol</option>
+        <!-- Added inline style to adjust line-height and auto height -->
+        <select class="form-control" name="symbol" style="line-height: 1.3; height: auto;">
+            <option disabled selected value="" style="font-size: 1rem; color: #6c757d;">
+                Symbol
+            </option>
             {% for symbol in symbolsList %}
               <option value="{{ symbol }}">{{ symbol }}</option>
             {% endfor %}

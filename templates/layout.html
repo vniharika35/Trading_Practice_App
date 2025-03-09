@@ -15,29 +15,29 @@
   </head>
   <body>
     <script type="text/javascript" src="{{ url_for('static', filename='tableUpdate.js') }}"></script>
-    <nav class="navbar navbar-expand-md sticky-top">
-      <!-- Renamed the brand to Trade Pilot -->
+    <!-- Fixed navbar (if needed, you can also set this inline in login pages) -->
+    <nav class="navbar navbar-expand-md">
       <a class="navbar-brand" href="/">📈 Trade Pilot</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
-          <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar">
-          {% if session.user_id %}
-              <ul class="navbar-nav mr-auto">
-                  <li class="nav-item"><a class="nav-link" href="/quote">📊 Quote</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/buy">💵 Buy</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/sell">💰 Sell</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/history">📜 History</a></li>
-              </ul>
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item"><a class="nav-link btn btn-warning" href="/logout">Logout</a></li>
-              </ul>
-          {% else %}
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-              </ul>
-          {% endif %}
+        {% if session.user_id %}
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/quote">📊 Quote</a></li>
+            <li class="nav-item"><a class="nav-link" href="/buy">💵 Buy</a></li>
+            <li class="nav-item"><a class="nav-link" href="/sell">💰 Sell</a></li>
+            <li class="nav-item"><a class="nav-link" href="/history">📜 History</a></li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link btn btn-warning" href="/logout">Logout</a></li>
+          </ul>
+        {% else %}
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+          </ul>
+        {% endif %}
       </div>
     </nav>
 
@@ -61,8 +61,8 @@
       </header>
     {% endif %}
 
-    <!-- Default white container for normal pages -->
-    <main class="container p-5">
+    <!-- Default container for normal pages -->
+    <main class="container">
       {% block main %}{% endblock %}
     </main>
 
