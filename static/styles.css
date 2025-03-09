@@ -5,7 +5,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0d1e5a, #2a3f80);
+    background: rgb(229, 229, 233);
+    background: linear-gradient(45deg, rgba(229, 229, 233, 1) 0%, rgba(194, 199, 248, 1) 50%, rgba(238, 219, 239, 0.9849279921929709) 100%);
+    /* background: linear-gradient(135deg, #0d1e5a, #2a3f80); */
     color: #ffffff;
     margin: 0;
     padding: 0;
@@ -13,21 +15,31 @@ body {
 
 /* Navigation Bar */
 .navbar {
-    background: linear-gradient(90deg, #0d1e5a, #1f3a93);
+    background: linear-gradient(90deg, #001f3f, #3d0075);
+    /* background: linear-gradient(90deg, #0d1e5a, #1f3a93); */
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
+
 .navbar-brand {
     font-size: 1.75rem;
     font-weight: 600;
     color: #ffffff !important;
 }
+
 .navbar-nav .nav-link {
     color: #ffffff !important;
     font-weight: 500;
     transition: color 0.3s ease;
 }
+
 .navbar-nav .nav-link:hover {
-    color: #ffcc00 !important;
+    /* color: #ffcc00 !important; */
+    background: linear-gradient(90deg, #001f3f, #3d0075);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: #ffffff;
 }
 
 /* Containers and Main Content (for normal pages) */
@@ -36,6 +48,7 @@ body {
     margin: auto;
     padding: 20px;
 }
+
 main {
     background: #ffffff;
     color: #333333;
@@ -56,35 +69,46 @@ main {
 
 /* Buttons */
 .btn-primary {
-    background: linear-gradient(90deg, #0d1e5a, #1f3a93);
+    background: linear-gradient(90deg, #001f3f, #3d0075);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     transition: background 0.3s ease, transform 0.2s ease;
     color: #ffffff;
 }
+
 .btn-primary:hover {
-    background: linear-gradient(90deg, #1f3a93, #0d1e5a);
+    background: linear-gradient(90deg, #001f3f, #3d0075);
 }
+
 .btn-success {
-    background: linear-gradient(90deg, #0d1e5a, #1f3a93);
+    background: linear-gradient(90deg, #001f3f, #3d0075);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     transition: background 0.3s ease, transform 0.2s ease;
     color: #ffffff;
 }
+
 .btn-success:hover {
-    background: linear-gradient(90deg, #1f3a93, #0d1e5a);
+    background: linear-gradient(90deg, #001f3f, #3d0075);
     transform: translateY(-2px);
 }
+
 .btn-warning {
-    background: #ffc107 !important;
+    /* background: #ffc107 !important;
     color: #333333 !important;
+    border: none; */
+    background: linear-gradient(90deg, #001f3f, #3d0075);
     border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: #ffffff;
 }
+
 .btn-warning:hover {
-    background: #e0a800 !important;
+    background: linear-gradient(90deg, #001f3f, #3d0075);
 }
 
 /* Tables */
@@ -94,15 +118,20 @@ main {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     color: #333333;
 }
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: #f8f9fa;
 }
+
 table thead {
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: #0d1e5a;
+    /* background-color: #0d1e5a; */
+    background: linear-gradient(90deg, #001f3f, #3d0075);
+
 }
+
 table thead th {
     color: #ffffff !important;
     font-weight: 600;
@@ -118,7 +147,7 @@ table thead th {
 footer {
     font-size: 0.9rem;
     padding: 10px;
-    background: #0d1e5a;
+    /* background: #0d1e5a; */
     color: #ffffff;
     text-align: center;
 }
@@ -136,12 +165,13 @@ img {
     }
 }
 
-/* ===================== Glassmorphic styles for login/register ===================== */
+/* ================= Glassmorphic styles for login/register ================= */
 
 /* Fullscreen translucent overlay covering entire viewport */
 .fullscreen-translucent {
     width: 100%;
-    height: 100vh; /* full viewport height */
+    height: 100vh;
+    /* full viewport height */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
@@ -149,14 +179,14 @@ img {
     align-items: center;
 }
 
-/* Glass-card for the form - larger & more spacious */
+/* Glass-card for the form – now smaller */
 .glass-card {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    padding: 3rem;
+    padding: 2rem;
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     color: #fff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
@@ -165,6 +195,7 @@ img {
 .glass-card .form-group {
     margin-bottom: 1.5rem;
 }
+
 .glass-card .form-group label {
     display: block;
     margin-bottom: 0.5rem;
