@@ -5,6 +5,7 @@ sys.stdout = sys.stderr
 from cs50 import SQL
 import datetime
 from flask import Flask, flash, jsonify, redirect, render_template, request, session, json
+from config import Config
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
@@ -16,6 +17,13 @@ from helpers import apology, login_required, lookup, usd, getQuote, lookups
 
 # Configure application
 app = Flask(__name__)
+app.config.from_object(Config)
+
+# Inject config into all templates
+@app.context_processor
+def inject_config():
+    return dict(config=app.config)
+
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True

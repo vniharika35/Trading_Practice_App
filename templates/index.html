@@ -1,34 +1,60 @@
 {% extends "layout.html" %}
 
-{% block title %}
-    Portfolio
-{% endblock %}
-
 {% block main %}
-    <div class="container">
-        <h2 class="text-center mb-4">📊 Your Stock Portfolio</h2>
+<!-- Full-width container-fluid with zero padding to fill the page width -->
+<div class="container-fluid p-0">
+  <h2 class="text-center my-4">Your Portfolio</h2>
 
-        <div class="row">
-            {% for stock in stocksListWithPrice %}
-            <div class="col-md-4 mb-3">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ stock["name"] }}</h5>
-                        <h6 class="text-muted">{{ stock["symbol"] }}</h6>
-                        <p class="card-text">Shares: <strong>{{ stock["shares"] }}</strong></p>
-                        <p class="card-text">Price: <strong>{{ stock["price"] }}</strong></p>
-                        <p class="card-text">Buy Price: <strong>{{ stock["buyPrice"] }}</strong></p>
-                        <p class="card-text">Total: <strong>{{ stock["total"] }}</strong></p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+  <!-- Scrollable container -->
+  <div style="max-height: 600px; overflow-y: auto; overflow-x: auto; position: relative;">
+    <table id="symboltable" class="table table-striped w-100" style="min-width: 100%;">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th>Shares</th>
+          <th>Buy Price</th>
+          <th>Current Price</th>
+          <th>P/L</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stock in stocksListWithPrice %}
+        <tr>
+          <td>{{ stock["symbol"] }}</td>
+          <td>{{ stock["name"] }}</td>
+          <td>{{ stock["shares"] }}</td>
+          <td>{{ stock["buyPrice"] }}</td>
+          <td>{{ stock["price"] }}</td>
+          <td>$0.00</td> <!-- P/L gets updated by tableUpdate.js -->
+          <td>{{ stock["total"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5" class="text-right"><strong>Cash:</strong></td>
+          <td colspan="2" id="cash">{{ cash }}</td>
+        </tr>
+        <tr>
+          <td colspan="5" class="text-right"><strong>Total:</strong></td>
+          <td colspan="2" id="total">{{ total }}</td>
+        </tr>
+        <tr>
+          <td colspan="5" class="text-right"><strong>P/L:</strong></td>
+          <td colspan="2" id="PL">$0.00</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script src="{{ url_for('static', filename='tableUpdate.js') }}"></script>
+    <script>
+      window.onload = function() {
+        startUpdate();
+      };
+    </script>
+  </div>
 
-        <div class="text-center mt-4">
-            <h4>Total Portfolio Value: <span class="badge badge-success">{{ total }}</span></h4>
-            <h4>Available Cash: <span class="badge badge-warning">{{ cash }}</span></h4>
-        </div>
-    </div>
+</div>
 {% endblock %}
 
