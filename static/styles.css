@@ -1,203 +1,203 @@
-/* Updated styles.css – Modern theme with #0d1e5a and gradients */
-
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: rgb(229, 229, 233);
-    background: linear-gradient(45deg, rgba(229, 229, 233, 1) 0%, rgba(194, 199, 248, 1) 50%, rgba(238, 219, 239, 0.9849279921929709) 100%);
-    /* background: linear-gradient(135deg, #0d1e5a, #2a3f80); */
-    color: #ffffff;
+    background: #F5F7FA; /* Light background */
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
-/* Navigation Bar */
-.navbar {
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-    /* background: linear-gradient(90deg, #0d1e5a, #1f3a93); */
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.navbar-brand {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #ffffff !important;
-}
-
-.navbar-nav .nav-link {
-    color: #ffffff !important;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-    /* color: #ffcc00 !important; */
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: background 0.3s ease, transform 0.2s ease;
-    color: #ffffff;
-}
-
-/* Containers and Main Content (for normal pages) */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
-main {
-    background: #ffffff;
-    color: #333333;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-/* Form Controls */
-.form-control {
-    display: inline-block;
-    width: 100%;
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-/* Buttons */
-.btn-primary {
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: background 0.3s ease, transform 0.2s ease;
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-}
-
-.btn-success {
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: background 0.3s ease, transform 0.2s ease;
-    color: #ffffff;
-}
-
-.btn-success:hover {
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-    transform: translateY(-2px);
-}
-
-.btn-warning {
-    /* background: #ffc107 !important;
-    color: #333333 !important;
-    border: none; */
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: background 0.3s ease, transform 0.2s ease;
-    color: #ffffff;
-}
-
-.btn-warning:hover {
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-}
-
-/* Tables */
-.table {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    color: #333333;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f8f9fa;
-}
-
-table thead {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    /* background-color: #0d1e5a; */
-    background: linear-gradient(90deg, #001f3f, #3d0075);
-
-}
-
-table thead th {
-    color: #ffffff !important;
-    font-weight: 600;
-}
-
-/* Alerts */
-.alert {
-    border-radius: 5px;
-    font-weight: 500;
-}
-
-/* Footer */
-footer {
-    font-size: 0.9rem;
-    padding: 10px;
-    /* background: #0d1e5a; */
-    color: #ffffff;
-    text-align: center;
-}
-
-/* Images */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    main {
-        padding: 15px;
-    }
-}
-
-/* ================= Glassmorphic styles for login/register ================= */
-
-/* Fullscreen translucent overlay covering entire viewport */
+/* ✨ Fullscreen Light Background */
 .fullscreen-translucent {
     width: 100%;
     height: 100vh;
-    /* full viewport height */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #F5F7FA; /* Light Grey-Blue Color */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Glass-card for the form – now smaller */
+/* ✨ Glassmorphic Login Card */
 .glass-card {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    background: white;
+    border-radius: 12px;
     padding: 2rem;
     width: 90%;
     max-width: 400px;
-    color: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #0A192F;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Form group alignment in the glass card */
-.glass-card .form-group {
+/* ✨ Login Heading - Modernized */
+.glass-card h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #0A192F;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.glass-card .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+/* ✨ Modern Key Icon */
+.glass-card h2 i {
+    font-size: 24px;
+    color: #1A73E8;
+}
+
+/* ✨ Label Styling */
+.glass-card label {
+    font-size: 14px;
     font-weight: 500;
+    color: #1B263B;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ✨ Input Fields - Uniform Size & Styling */
+.glass-card input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.glass-card input:focus {
+    outline: none;
+    border-color: #1A73E8;
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
+}
+
+/* ✨ Login Button - Fully Aligned */
+.glass-card .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #0A192F;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.glass-card .btn-primary:hover {
+    background: #1F3A5F;
+    transform: translateY(-2px);
+}
+
+
+/* ✨ Navigation Bar - Fix Background Color */
+.navbar {
+    background: #0A192F;  /* Dark Navy Blue */
+    padding: 12px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ✨ Navigation Brand */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFFFFF !important;
+    transition: color 0.3s ease;
+}
+
+/* ✨ Navigation Links */
+.navbar-nav .nav-link {
+    color: #E1E6F0 !important;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+/* ✨ Login & Register Buttons in Navbar */
+.navbar-nav .nav-item .btn-primary {
+    background: #1A73E8; /* Bright Blue */
+    padding: 6px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item .btn-primary:hover {
+    background: #0F5AC1;
+    transform: translateY(-2px);
+}
+
+
+/* ✨ Label Styling - Left Aligned & Bigger Font */
+.glass-card label {
+    font-size: 16px;  /* Increased size */
+    font-weight: 600; /* More readable */
+    color: #1B263B;
+    display: block;
+    text-align: left;  /* Left align */
+    margin-bottom: 5px;
+}
+
+/* ✨ Input Fields - Same Height & Consistent Look */
+.glass-card input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.glass-card input:focus {
+    outline: none;
+    border-color: #1A73E8;
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
+}
+
+/* ✨ Navbar Register & Login Buttons - Properly Aligned */
+.navbar-nav .nav-item .btn-primary {
+    background: #1A73E8; /* Modern Blue */
+    padding: 8px 16px;  /* Increased padding for better alignment */
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    color: white;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-nav .nav-item .btn-primary:hover {
+    background: #0F5AC1;
+    transform: translateY(-2px);
+}
+
+/* ✨ Register Link Styling */
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #1A73E8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #0F5AC1;
+    text-decoration: underline;
 }

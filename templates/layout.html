@@ -30,16 +30,17 @@
             <li class="nav-item"><a class="nav-link" href="/history">📜 History</a></li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link btn btn-warning" href="/logout">Logout</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-primary" href="/logout">Logout</a></li>
           </ul>
         {% else %}
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-primary" href="/login">Login</a></li>
           </ul>
         {% endif %}
       </div>
     </nav>
+    
 
     {% if get_flashed_messages(with_categories=true) %}
       <header>
